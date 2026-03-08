@@ -52,14 +52,17 @@ export const Hero = () => {
           {/* <p className="text-sm text-muted text-center mt-2">
             WhatsApp card preview. Replace with your final design.
           </p> */}
-          <div className="hero-card-box">
-            <div className="hero-card-inner">
-              <Image
-                src="/images/vj-whatsapp-card.jpeg"
-                alt="VJ Painting & Interior Decorators WhatsApp card"
-                fill
-                className="object-cover"
-              />
+          
+            <div className="hero-card-box">
+              <div className="hero-card-inner">
+                
+                <Image
+                  src="/images/hero.png"
+                  alt="VJ Painting & Interior Decorators WhatsApp card"
+                  fill
+                  className="object-contain "
+                />
+              <div className="hero-image-overlay"></div>
             </div>
           </div>
           {/* <p className="text-xs text-dim text-center mt-3">

@@ -1,8 +1,13 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 import { NAV_LINKS, PHONE_NUMBER_TEL, WHATSAPP_URL } from "@/lib/siteConfig";
 
 export const SiteHeader = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <header className="site-header">
       <div className="container-page header-inner">
@@ -51,12 +56,76 @@ export const SiteHeader = () => {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noreferrer"
-            className="header-whatsapp"
+            className="header-whatsapp hidden md:inline-block"
           >
             WhatsApp
           </a>
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="mobile-menu-btn"
+          aria-label="Toggle mobile menu"
+        >
+          {isMobileMenuOpen ? (
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="white"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          ) : (
+            <>
+              <span></span>
+              <span></span>
+              <span></span>
+            </>
+          )}
+        </button>
         </div>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div 
+          className="md:hidden mobile-menu-overlay fixed inset-0 top-20 z-40 bg-black bg-opacity-50 backdrop-blur-sm"
+          onClick={() => setIsMobileMenuOpen(false)}
+        >
+          <div 
+            className="mobile-menu bg-bg-card border-t border-border p-6"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <nav className="flex flex-col gap-4">
+              {NAV_LINKS.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="mobile-nav-link text-lg font-medium text-text hover:text-gold transition-colors py-2 px-4 rounded-md hover:bg-gold hover:bg-opacity-10"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+            <div className="mt-6 pt-6 border-t border-border">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="mobile-whatsapp-btn inline-block w-full text-center px-6 py-3 bg-whatsapp text-black font-semibold rounded-md hover:bg-whatsapp-hover transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 };

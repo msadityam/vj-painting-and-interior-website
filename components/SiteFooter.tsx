@@ -15,11 +15,27 @@ export const SiteFooter = () => {
         </div>
         <div>
           <h4>Quick Links</h4>
-          <div className="footer-links mt-2">
-            <Link href="/painting-services">Painting Services</Link>
-            <Link href="/interior-works">Interior Works</Link>
-            <Link href="/gallery">Gallery</Link>
-            <Link href="/contact">Contact</Link>
+          <div className="footer-links mt-4 flex flex-col gap-3">
+            <Link
+              href="/painting-services"
+              className="btn-link-mobile px-5 py-4 text-lg font-semibold rounded-lg transition-all hover:bg-gold-100 hover:pl-7"
+            >
+              Painting Services
+            </Link>
+
+            <Link
+              href="/interior-works"
+              className="btn-link-mobile px-5 py-4 text-lg font-semibold rounded-lg transition-all hover:bg-gold-100 hover:pl-7"
+            >
+              Interior Works
+            </Link>
+
+            <Link
+              href="/gallery"
+              className="btn-link-mobile px-5 py-4 text-lg font-semibold rounded-lg transition-all hover:bg-gold-100 hover:pl-7"
+            >
+              Gallery
+            </Link>
           </div>
         </div>
         <div className="footer-contact">
@@ -30,10 +46,10 @@ export const SiteFooter = () => {
               {PHONE_NUMBER_DISPLAY}
             </a>
           </p>
-          <div className="footer-buttons">
+          <div className="footer-buttons flex flex-col gap-3 mt-4">
             <a
               href={`tel:${PHONE_NUMBER_TEL}`}
-              className="btn-outline-gold px-3 py-1 text-xs"
+              className="btn-outline-gold px-6 py-3 text-base font-medium rounded-md text-center transition-colors hover:bg-gold-500 hover:text-white"
             >
               Call Now
             </a>
@@ -41,7 +57,7 @@ export const SiteFooter = () => {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noreferrer"
-              className="btn-whatsapp px-3 py-1 text-xs"
+              className="btn-whatsapp px-6 py-3 text-base font-medium rounded-md text-center transition-colors hover:bg-green-600"
             >
               WhatsApp
             </a>
