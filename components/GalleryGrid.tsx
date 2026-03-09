@@ -94,6 +94,15 @@ export const GalleryGrid = ({ images }: { images: string[] }) => {
         ))}
       </div>
 
+      {/* Video Section */}
+      <div style={{ marginTop: "2rem", textAlign: "center" }}>
+        <h2 style={{ fontSize: "1.5rem", fontWeight: "bold", marginBottom: "1rem" }}>Structured painting</h2>
+        <video controls style={{ maxWidth: "100%", height: "auto" }}>
+          <source src="/Gallery/video/WhatsApp Video 2026-03-09 at 00.01.19.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
       {activeItem && (
         <div
           className="lightbox-overlay"

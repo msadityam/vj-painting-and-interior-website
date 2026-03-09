@@ -6,7 +6,7 @@ export const SiteFooter = () => {
     <footer className="site-footer">
       <div className="container-page footer-inner">
         <div>
-          <h3>VJ Painting & Interior Decorators</h3>
+          <h3>VJ Interior Decorators & Painting Works</h3>
           <p className="text-sm text-muted mt-2">
             Sparkle Interiors with premium painting, interior decoration, and
             custom carpentry finishes. Serving homes and commercial spaces with
@@ -14,28 +14,23 @@ export const SiteFooter = () => {
           </p>
         </div>
         <div>
-          <h4>Quick Links</h4>
-          <div className="footer-links mt-4 flex flex-col gap-3">
-            <Link
-              href="/painting-services"
-              className="btn-link-mobile px-5 py-4 text-lg font-semibold rounded-lg transition-all hover:bg-gold-100 hover:pl-7"
-            >
-              Painting Services
-            </Link>
+          <div>
+            <h4>Our Services</h4>
+            <p className="rates-hint">For detailed rates click below</p>
 
-            <Link
-              href="/interior-works"
-              className="btn-link-mobile px-5 py-4 text-lg font-semibold rounded-lg transition-all hover:bg-gold-100 hover:pl-7"
-            >
-              Interior Works
-            </Link>
+            <div className="footer-links services-links">
+              <Link href="/painting-services" className="service-btn">
+                Painting Services
+              </Link>
 
-            <Link
-              href="/gallery"
-              className="btn-link-mobile px-5 py-4 text-lg font-semibold rounded-lg transition-all hover:bg-gold-100 hover:pl-7"
-            >
-              Gallery
-            </Link>
+              <Link href="/interior-works" className="service-btn">
+                Interior Works
+              </Link>
+            </div>
+{/* 
+            <div className="footer-links mt-4 pl-5">
+              <Link href="/gallery">Gallery</Link>
+            </div> */}
           </div>
         </div>
         <div className="footer-contact">
@@ -63,8 +58,7 @@ export const SiteFooter = () => {
             </a>
           </div>
           <p className="footer-copy">
-            © {new Date().getFullYear()} VJ Painting & Interior Decorators. All
-            rights reserved.
+            © {new Date().getFullYear()} VJ Interior Decorators & Painting Works. All rights reserved.
           </p>
         </div>
       </div>

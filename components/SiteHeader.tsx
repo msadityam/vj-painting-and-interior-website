@@ -31,8 +31,9 @@ export const SiteHeader = () => {
             />
           </div>
           <div className="leading-tight">
-            <p className="logo-tagline text-lg">Sparkle Interiors</p>
-            <p className="logo-name text-lg">VJ Painting & Interior Decorators</p>
+             <p className="logo-name">
+              <span className="logo-highlight">VJ</span> Interior Decorators & Painting Works
+             </p>
           </div>
         </Link>
 

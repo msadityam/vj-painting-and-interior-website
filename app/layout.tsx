@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { LayoutShell } from "@/components/LayoutShell";
 
 export const metadata: Metadata = {
-  title: "VJ Painting & Interior Decorators | Sparkle Interiors",
+  title: "VJ Interior Decorators & Painting Works",
   description:
     "Premium painting and interior decoration services by VJ Painting & Interior Decorators. Sparkle Interiors with expert wall painting, wood polish, and custom interior works.",
   metadataBase: new URL("https://www.example-vjpainting.com"),

@@ -6,11 +6,11 @@ export const Hero = () => {
   return (
     <section className="container-page hero">
       <div>
-        <p className="section-title">Sparkle Interiors</p>
+        <p className="section-title">VJ Interior Decorators</p>
         <div className="gradient-divider mt-3" />
-        <h1 className="hero-title">
-          VJ Painting &amp; Interior Decorators
-        </h1>
+        {/* <h1 className="hero-title">
+          VJ Interior Decorators &amp; Painting Works
+        </h1> */}
         <p className="hero-desc">
           Transform your home with deep blue and gold luxury finishes, premium
           paints, and precision interior carpentry. From feature walls to full
