@@ -19,18 +19,16 @@ export const SiteFooter = () => {
             <p className="rates-hint">For detailed rates click below</p>
 
             <div className="footer-links services-links">
-              <Link href="/painting-services" className="service-btn">
-                Painting Services
-              </Link>
-
               <Link href="/interior-works" className="service-btn">
                 Interior Works
               </Link>
+              <Link href="/painting-services" className="service-btn">
+                Painting Services
+              </Link>
+              <Link href="/gallery" className="service-btn">
+                Gallery
+              </Link>
             </div>
-{/* 
-            <div className="footer-links mt-4 pl-5">
-              <Link href="/gallery">Gallery</Link>
-            </div> */}
           </div>
         </div>
         <div className="footer-contact">

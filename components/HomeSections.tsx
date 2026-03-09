@@ -6,17 +6,23 @@ export const ServicesOverview = () => {
       <div className="page-section-header">
         <div>
           <p className="section-title">Services</p>
-          <h2 className="section-heading">Painting &amp; Interior Solutions</h2>
+          <h2 className="section-heading">Interior &amp; Painting Solutions</h2>
         </div>
-        <div className="section-links flex gap-3">
-          <Link href="/painting-services" className="btn-outline-gold px-4 py-2">
-            Painting Services
-          </Link>
+          <p className="services-arrow-hint-mobile">
+        Tap a button to view detailed pricing ↓
+      </p>
+        <div className="section-links">
           <Link
             href="/interior-works"
-            className="btn-outline-gold px-4 py-2 border-slate-700 text-muted"
+            className="btn-outline-gold px-4 py-2"
           >
             Interior Works
+          </Link>
+          <Link
+            href="/painting-services"
+            className="btn-outline-gold px-4 py-2 border-slate-700 text-muted"
+          >
+            Painting Services
           </Link>
         </div>
       </div>
@@ -43,6 +49,7 @@ export const ServicesOverview = () => {
           </p>
         </div>
       </div>
+    
     </section>
   );
 };
@@ -99,51 +106,6 @@ export const WhyChooseUs = () => {
           Get a no-obligation consultation with layout ideas, colour
           combinations, and material suggestions.
         </p>
-      </div>
-    </section>
-  );
-};
-
-export const GalleryPreview = ({ images }: { images: string[] }) => {
-  const items = images.map((src, index) => ({
-    id: index + 1,
-    title: `Project ${(index + 1).toString().padStart(2, "0")}`,
-    src,
-  }));
-
-  return (
-    <section className="container-page mt-10 pb-10">
-      <div className="gallery-preview-header">
-        <div>
-          <p className="section-title">Gallery</p>
-          <h2 className="gallery-preview-title">Recent completed projects</h2>
-          <p className="gallery-preview-desc">
-            A glimpse of feature walls, bedroom makeovers, ceilings, and
-            wardrobes completed by the VJ Painting &amp; Interior Decorators team.
-          </p>
-        </div>
-        <Link href="/gallery" className="gallery-preview-link btn-outline-gold px-4 py-2">
-          View full gallery
-        </Link>
-      </div>
-      <div className="gallery-preview-grid grid-6">
-        {items.map((item) => (
-          <div key={item.id} className="gallery-item">
-            <img
-              src={item.src}
-              alt={item.title}
-              className="w-full h-full object-cover absolute inset-0"
-              loading="lazy"
-            />
-            <div className="gallery-item-overlay" />
-            <div className="gallery-item-content">
-              <p className="gallery-item-title">{item.title}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className="gallery-mobile-link">
-        <Link href="/gallery">View full gallery →</Link>
       </div>
     </section>
   );

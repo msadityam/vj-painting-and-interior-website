@@ -1,6 +1,5 @@
 import { GalleryGrid } from "@/components/GalleryGrid";
-import fs from "fs";
-import path from "path";
+import { readGalleryCategories } from "@/lib/gallery";
 
 export const metadata = {
   title: "Gallery | VJ Painting & Interior Decorators",
@@ -9,19 +8,7 @@ export const metadata = {
 };
 
 export default function GalleryPage() {
-  // read image filenames from the public/Gallery directory at build time
-  let images: string[] = [];
-  try {
-    const galleryDir = path.join(process.cwd(), "public", "Gallery");
-    const entries = fs.readdirSync(galleryDir);
-    images = entries
-      .filter((f) => /\.(jpe?g|png|webp|gif)$/i.test(f))
-      .sort()
-      .map((f) => "/Gallery/" + encodeURIComponent(f));
-  } catch (e) {
-    // directory might not exist yet, fallback to empty
-    console.warn("Could not read gallery directory:", e);
-  }
+  const categories = readGalleryCategories();
 
   return (
     <div className="container-page page-wrap space-y-8">
@@ -35,8 +22,13 @@ export default function GalleryPage() {
         </p>
       </section>
 
-      <section>
-        <GalleryGrid images={images} />
+      <section className="space-y-10">
+        {categories.map((category) => (
+          <div key={category.slug} id={category.slug} className="space-y-4">
+            <h2 className="section-heading">{category.name}</h2>
+            <GalleryGrid images={category.images} />
+          </div>
+        ))}
       </section>
     </div>
   );
