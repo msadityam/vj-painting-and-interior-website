@@ -48,7 +48,7 @@ export const Hero = () => {
       <div className="hero-aside">
         <div className="card-surface relative p-6">
           <div className="hero-aside-overlay" />
-          <p className="section-title text-center">Painting &amp; Interiors</p>
+          <p className="section-title text-center">Interiors &amp; Painting </p>
           {/* <p className="text-sm text-muted text-center mt-2">
             WhatsApp card preview. Replace with your final design.
           </p> */}

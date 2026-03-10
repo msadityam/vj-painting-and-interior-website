@@ -49,30 +49,37 @@ export const HomeGalleryPreview = ({ categories }: HomeGalleryPreviewProps) => {
         </Link>
       </div>
       <div className="gallery-preview-grid flex flex-nowrap overflow-x-auto gap-4">
-        {categories.map((category) => {
-          const cover = category.images[0];
-          return (
-            <Link
-              key={category.slug}
-              href={`/gallery#${category.slug}`}
-              className="gallery-item gallery-category-card"
-            >
-              {cover && (
-                <img
-                  src={cover}
-                  alt={category.name}
-                  className="w-full h-full object-cover absolute inset-0"
-                  loading="lazy"
-                />
-              )}
-              <div className="gallery-item-overlay" />
-              <div className="gallery-item-content">
-                <p className="gallery-item-title">{category.name}</p>
-              </div>
-            </Link>
-          );
-        })}
-      </div>
+  {[...categories]
+    .sort((a, b) => {
+      if (a.name.toLowerCase() === "pop work") return 1;
+      if (b.name.toLowerCase() === "pop work") return -1;
+      return 0;
+    })
+    .map((category) => {
+      const cover = category.images[0];
+
+      return (
+        <Link
+          key={category.slug}
+          href={`/gallery#${category.slug}`}
+          className="gallery-item gallery-category-card"
+        >
+          {cover && (
+            <img
+              src={cover}
+              alt={category.name}
+              className="w-full h-full object-cover absolute inset-0"
+              loading="lazy"
+            />
+          )}
+          <div className="gallery-item-overlay" />
+          <div className="gallery-item-content">
+            <p className="gallery-item-title">{category.name}</p>
+          </div>
+        </Link>
+      );
+    })}
+</div>
       <div className="gallery-mobile-link">
         <Link href="/gallery">View full gallery →</Link>
       </div>

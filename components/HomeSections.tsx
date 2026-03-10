@@ -9,18 +9,18 @@ export const ServicesOverview = () => {
           <h2 className="section-heading">Interior &amp; Painting Solutions</h2>
         </div>
           <p className="services-arrow-hint-mobile">
-        Tap a button to view detailed pricing ↓
+        Tap a button to view pricing ↓
       </p>
         <div className="section-links">
           <Link
             href="/interior-works"
-            className="btn-outline-gold px-4 py-2"
+            className="btn-outline-gold px-4 py-2 services-link"
           >
             Interior Works
           </Link>
           <Link
             href="/painting-services"
-            className="btn-outline-gold px-4 py-2 border-slate-700 text-muted"
+            className="btn-outline-gold px-4 py-2 border-slate-700 text-muted services-link"
           >
             Painting Services
           </Link>
